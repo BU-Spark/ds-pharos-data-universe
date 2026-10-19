@@ -168,3 +168,18 @@ $RECYCLE.BIN/
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+
+data/
+outputs/
+*.csv
+*.xlsx
+*.zip
+
+# Census API key,
+.env
+
+# Python / notebook clutter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
