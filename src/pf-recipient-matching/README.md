@@ -176,7 +176,7 @@ Recipient classes over all rows:
 
 ## Output files
 
-All outputs are written to `task3_outputs/` on the team Drive. They are not stored in this repository.
+All outputs are written to `pf_recipient_matching` on the team Drive. They are not stored in this repository.
 
 | File | Contents | Used by |
 | --- | --- | --- |
