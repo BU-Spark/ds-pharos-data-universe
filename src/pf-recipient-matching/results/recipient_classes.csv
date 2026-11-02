@@ -1,0 +1,13 @@
+recipient_class,class_reason,rows,dollars,pct_rows
+foreign,ein_word_FOREIGN,31089,8148427748.0,1.4
+foreign,status_text_foreign,19,1077420.0,0.0
+government,ein_word_GOVERNMENT,23199,2966251090.0,1.04
+government,government_ein_not_in_bmf,10770,515241786.0,0.48
+government,name_pattern,6533,260563581.0,0.29
+government,status_text_government,99,6448259.0,0.0
+individual,ein_word_INDIVIDUAL,128577,16228877645.0,5.78
+individual,person_field_no_ein,30211,4252160923.0,1.36
+individual,status_text_individual,745,3702654.0,0.03
+organization,,1990085,115330557104.0,89.44
+unidentifiable,no_name_no_ein,712,9060419.0,0.03
+unspecified,see_attached_various,2939,8874871642.0,0.13

@@ -1,0 +1,7 @@
+metric,pct_rows
+rcpnt_ein filled (any value),80.6
+rcpnt_ein is a usable EIN (valid9/padded8),72.3
+usable EIN that exists in a reference,70.6
+matched after task 3 (all rows),71.8
+matched after task 3 (excl. set-aside),78.7
+MA recipients: matched (excl. set-aside),81.2
