@@ -79,6 +79,17 @@ There is also a **People-serving** preset, which combines human services and hea
 
 **Small towns:** towns under 5,000 residents get a note on the map, because having no organization of a given type is common in a small town, and organizations in nearby cities may serve these areas.
 
+### Gap score and map colors
+
+Wherever there are desert labels, the maps also have a **gap score** layer: the area's poverty rank minus its nonprofit density rank, each a percentile from 0 to 100 (among areas with 500+ residents).
+- Positive scores (orange) mean more need than nonprofits, toward a desert.
+- Negative scores (blue) mean more nonprofits than need, toward over-concentration.
+- Scores near 0 (near-white) mean need and nonprofits are similar. This includes high-need areas with many nonprofits, so check the desert layer for those.
+
+The score has no cut-off, so areas just outside the top or bottom quarter still show up as close to a desert. The desert labels stay as the main result.
+
+Colors mean the same thing on every layer: **orange = gap, blue = more nonprofits, teal = high need and many nonprofits, gray = other or excluded.** Single-type density layers use a blue scale (cream = none of that type).
+
 ### College areas
 
 ACS table B14006 splits the people in poverty by school enrollment. For each area, the notebook computes:
@@ -114,9 +125,9 @@ Boston, Springfield and Worcester are not deserts at the town level, because non
 
 | File | Contents |
 |---|---|
-| `view1_tracts.html`, `view1_towns.html` | Interactive maps with a layer menu by nonprofit type, hover details and a legend |
+| `view1_tracts.html`, `view1_towns.html` | Interactive maps with a layer menu by nonprofit type (desert groups, gap scores, density), hover details and a legend |
 | `map_tract_deserts_all_vs_people_serving.png` | Static comparison map |
-| `tracts_by_type.csv`, `towns_by_type.csv` | Counts, per-1,000 rates, groups and student measures by area |
+| `tracts_by_type.csv`, `towns_by_type.csv` | Counts, per-1,000 rates, groups, gap scores and student measures by area |
 | `org_tract_town.csv` | Each organization's EIN, category, tract and town (no names) |
 | `desert_summary_tracts.csv`, `desert_summary_towns.csv` | Desert and over-concentration counts and cut-offs by filter |
 | `density_by_type_tracts.csv`, `organizations_by_category.csv`, `filter_definitions.csv` | Supporting tables |
