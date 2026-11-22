@@ -23,8 +23,8 @@ These come from earlier work and are used as-is. None of the data files are in t
 
 | Input | Earlier work it comes from | By |
 |---|---|---|
-| `ma_tract_kpi1.csv` | ZIP fallback placement, ACS join and nonprofits per 1,000 residents (`task2_zip_fallback_acs_kpi1.py`) | Yunho Choi and Menahil Bakhat |
-| `ma_org_tract_placement.csv` | Same step: one row per organization, with its tract, coordinates and ZIP | Yunho Choi and Menahil Bakhat |
+| `ne_placement_org.csv` | New England geocoding and ZIP fallback placement: one row per organization, with its tract, coordinates, ZIP and placement precision. The shared base for all three views; only organizations placed in a Massachusetts tract are used here. | Yunho Choi |
+| `ma_tract_kpi1.csv` | ZIP fallback / ACS join step (`task2_zip_fallback_acs_kpi1.py`). Only its tract ACS values (population, poverty, income) are used; its nonprofit counts come from the earlier placement and are not used. | Yunho Choi and Menahil Bakhat |
 | `ma_bmf_ntee.csv` (or `bmf_clean.parquet`) | NTEE codes from the IRS Business Master File, prepared during PF grant recipient EIN matching | Yeongchan Jang |
 
 The notebook also downloads these directly from the Census Bureau:
@@ -36,7 +36,7 @@ The notebook also downloads these directly from the Census Bureau:
 
 1. Add your Census API key to Colab Secrets as `CENSUS_API_KEY`, and turn on notebook access. The key is free from the Census Bureau. Never put it in the code.
 2. Open the notebook and run the cells top to bottom.
-3. When the Setup cell asks, upload `ma_tract_kpi1.csv`, `ma_org_tract_placement.csv` and `ma_bmf_ntee.csv`.
+3. When the Setup cell asks, upload `ne_placement_org.csv`, `ma_tract_kpi1.csv` and `ma_bmf_ntee.csv`.
 4. The last cell downloads all outputs as one zip file.
 
 Change settings only in the Config cell: `SPLIT`, `LOW_POP`, `STUDENT_POVERTY_SHARE`, `SMALL_TOWN`, and the NTEE categories.
@@ -106,12 +106,14 @@ Census columns are chosen by their labels rather than typed codes. The code stop
 
 ## Results (tax years 2024–2025, Massachusetts)
 
+Based on the 22,006 organizations placed in Massachusetts tracts in `ne_placement_org.csv`.
+
 **Tracts (quarters):**
 
 | | Deserts | Over-concentration | Nonprofits per 1,000 (deserts vs. over-concentration) |
 |---|---|---|---|
-| All nonprofits | 140 tracts | 127 tracts | 0.51 vs. 6.58 |
-| People-serving | 122 tracts | 95 tracts | 0.01 vs. 1.56 |
+| All nonprofits | 136 tracts | 117 tracts | 0.46 vs. 7.28 |
+| People-serving | 117 tracts | 94 tracts | 0.00 vs. 1.63 |
 
 **Towns, all nonprofits:**
 - **28 possible deserts**, mostly older industrial cities: Lowell, Brockton, Lynn, New Bedford, Fall River, Lawrence, Chelsea and others.
