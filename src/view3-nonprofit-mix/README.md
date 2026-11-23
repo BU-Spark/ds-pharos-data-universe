@@ -6,7 +6,7 @@ Which types of nonprofits exist in high-poverty vs. low-poverty areas of Massach
 |---|---|
 | `view3_nonprofit_mix.ipynb` | The notebook (Google Colab). Builds the need groups, mix and presence tables, charts and map. |
 
-## Inputs (from the team Drive, `outputs/view1_density_by_type/`)
+## Inputs (from Google Drive, `outputs/view1_density_by_type/`)
 | Input | Comes from |
 |---|---|
 | `tracts_by_type.csv` | View 1: tract population, poverty, income, college flag and organizations by NTEE category |
